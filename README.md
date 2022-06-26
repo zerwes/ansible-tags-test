@@ -1,11 +1,11 @@
 # ansible-tags-test
 test strange tags behavior on ansible
 
-##playbook
-to demonstrate that if a first (pre-run) task sets `gather_facts` to `false`,
-subsequent calls to rolles will skip gathering facts if we use a tag just applying to a role.
+## playbook
+playbook to demonstrate that if a first (pre-run) task sets `gather_facts` to `false`,
+subsequent calls to roles will skip gathering facts if we use a tag just applying to a role.
 
-playbook
+playbook:
 ```yaml
 ---
 - name: pre ...
