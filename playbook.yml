@@ -1,0 +1,22 @@
+---
+
+- name: pre ...
+  hosts: all
+  gather_facts: no
+  # pre_tasks:
+  tasks:
+    - name: ansible version
+      delegate_to: 127.0.0.1
+      debug:
+        var: ansible_version.full
+  tags: always
+
+- name: test facts and tags
+  hosts: all
+  gather_facts: yes
+  roles:
+    - role: testfacts
+      tags:
+        - innertag
+  tags:
+    - outertag
