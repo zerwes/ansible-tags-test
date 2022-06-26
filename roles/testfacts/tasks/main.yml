@@ -1,0 +1,9 @@
+---
+
+- name: debug fact ansible_distribution
+  debug:
+    var: ansible_distribution
+
+- name: assert fact ansible_distribution
+  assert:
+    that: ansible_distribution is defined
