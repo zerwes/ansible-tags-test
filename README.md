@@ -10,7 +10,7 @@ playbook:
 ---
 - name: pre ...
   hosts: all
-  gather_facts: "{{ pre_gather_facts | default(false) | bool }}"
+  gather_facts: no
   # pre_tasks:
   tasks:
     - name: ansible version
