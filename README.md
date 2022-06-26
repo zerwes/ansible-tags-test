@@ -91,3 +91,10 @@ PLAY RECAP *********************************************************************
 127.0.0.1                  : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0
 ```
 
+## ansible versions
+tested with:
+
+  * 2.9.27
+  * 2.12.2
+  * 2.12.7
+  * 2.13.1
