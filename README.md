@@ -1,6 +1,8 @@
 # ansible-tags-test
 test and demonstarte strange tags behavior on ansible regarding `Gathering Facts`
 
+see: https://github.com/ansible/ansible/issues/78153
+
 ## playbook
 playbook to demonstrate that if a first (pre-run) task sets `gather_facts` to `false`,
 subsequent calls to roles will skip gathering facts if we use a tag just applying to a role.
