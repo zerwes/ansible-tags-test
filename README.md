@@ -1,5 +1,5 @@
 # ansible-tags-test
-test strange tags behavior on ansible
+test and demonstarte strange tags behavior on ansible regarding `Gathering Facts`
 
 ## playbook
 playbook to demonstrate that if a first (pre-run) task sets `gather_facts` to `false`,
