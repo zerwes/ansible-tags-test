@@ -3,12 +3,19 @@
 - name: pre ...
   hosts: all
   gather_facts: no
-  # pre_tasks:
+  # pre_tasks: ... makes no difference
   tasks:
     - name: ansible version
       delegate_to: 127.0.0.1
       debug:
         var: ansible_version.full
+  tags: always
+
+- name: ensure facts gathering is done and not disturbed by some butterfly wing noise on the other side of the play
+  hosts: all
+  pre_tasks:
+    - name: gather facts
+      setup:
   tags: always
 
 - name: test facts and tags
