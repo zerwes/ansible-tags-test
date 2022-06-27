@@ -3,6 +3,9 @@ test and demonstarte strange tags behavior on ansible regarding `Gathering Facts
 
 see: https://github.com/ansible/ansible/issues/78153
 
+As this is documented and the behavior is as expected,
+I am archiving this (even if the logic and behavior is not comprehensible for me).
+
 ## playbook
 playbook to demonstrate that if a first (pre-run) task sets `gather_facts` to `false`,
 subsequent calls to roles will skip gathering facts if we use a tag just applying to a role.
@@ -19,6 +22,14 @@ playbook:
       delegate_to: 127.0.0.1
       debug:
         var: ansible_version.full
+  tags: always
+
+# my solution for now
+- name: ensure facts gathering is done and not disturbed by some butterfly wing noise on the other side of the play
+  hosts: all
+  pre_tasks:
+    - name: gather facts
+      setup:
   tags: always
 
 - name: test facts and tags
